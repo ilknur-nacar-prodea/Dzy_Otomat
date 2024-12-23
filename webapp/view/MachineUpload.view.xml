@@ -1,0 +1,84 @@
+<mvc:View controllerName="app.DzyOtomat.controller.MachineUpload" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:ndc="sap.ndc">
+	<App>
+		<pages>
+			<Page title="{i18n>Upload}" showNavButton="true" navButtonPress="onConfirmNavBack">
+				<content>
+					<Panel backgroundDesign="Solid" width="100%" class="sapUiSmallMarginBottom">
+						<headerToolbar>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<Title text="[{oHeader>/ZzvenScode}] {oHeader>/ZzvenSdesc}" class="UplFirstTitle"/>
+								<ToolbarSpacer/>
+								<ndc:BarcodeScannerButton id="idScanner" scanSuccess="onScanMaterial" dialogTitle="{i18n>BarcodeScanner}" width="5rem"
+									preferFrontCamera="false" frameRate="30" zoom="1"/>
+								<Button icon="sap-icon://multiselect-all" press="onClearFilter" type="Emphasized" tooltip="{i18n>ShowAll}" width="5rem"></Button>
+							</Toolbar>
+						</headerToolbar>
+						<f:GridList id="grid1" items="{ path: 'oMaterial>/' }" class="UplGridList" property="highlight">
+							<f:customLayout>
+								<grid:GridBoxLayout boxMinWidth="22rem" boxWidth="70rem"/>
+							</f:customLayout>
+							<!--<f:GridListItem class="outOfStockColor" id="gridListItem">-->
+							<f:GridListItem id="gridListItem" > <!--highlight="{oMaterial>Status}"-->
+								<FlexBox direction="Column" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+									<FlexBox direction="Row">
+										<Title text="{path: 'oMaterial>ZzvenNo', formatter: '.formatter.formatVenNo'}" class="UplMaterialTitle"/>
+										<Title text="{oMaterial>Maktx}" class="UplMaterialTitle sapUiSmallMarginBegin"/>
+									</FlexBox>
+									<FlexBox direction="Row">
+										<Title text="{oMaterial>ZzvenMatnr}" class="UplMatnrText sapUiMediumMarginBegin"/>
+									</FlexBox>
+									<FlexBox direction="Row">
+										<VBox class="sapUiSmallMarginEnd">
+											<Button icon="sap-icon://edit" width="10%" press="onEditMachine" class="BtnUplEdit"></Button>
+										</VBox>
+										<FlexBox direction="Column" class="sapUiSmallMarginEnd">
+											<FlexBox direction="Row" class="sapUiTinyMarginEnd TopMargin02rem">
+												<items>
+													<Label text="{i18n>Capacity}" class="sapUiTinyMarginBeginEnd"></Label>
+													<Text text="{oMaterial>ZzvenCap} {oMaterial>ZzvenMeins}" />
+													<!--<Text text="{path:'oMaterial>ZzvenCap' ,formatter:'.formatter.currencyValue'}  {oMaterial>ZzvenMeins}"/>-->
+												</items>
+											</FlexBox>
+											<FlexBox direction="Row" class="TopMargin02rem">
+												<items>
+													<Label text="{i18n>Current}" class="sapUiTinyMarginBeginEnd" visible="false"/>
+													<Text id="t3" text="{oMaterial>ZzvenCurrent} {oMaterial>ZzvenMeins}" visible="false"/>
+												</items>
+											</FlexBox>
+											<FlexBox direction="Row" class="TopMargin02rem">
+												<items>
+													<Label text="{i18n>VehcStock}" class="sapUiTinyMarginBeginEnd"/>
+													<Text text="{oMaterial>VehcStock} {oMaterial>ZzvenMeins}"/>
+													<!--<Text text="{path:'oMaterial>VehcStock' ,formatter:'.formatter.currencyValue'} {oMaterial>ZzvenMeins}"/>-->
+													<!--<Text text="{path:'oMaterial>VehcStock' ,type:'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 3 }} {oMaterial>ZzvenMeins}"/>-->
+													<!--<Text text="{oMaterial>VehcStock} {oMaterial>ZzvenMeins}" class="outOfStockColor"/>-->
+												</items>
+											</FlexBox>
+										</FlexBox>
+										<FlexBox direction="Column" class="sapUiSmallMarginEnd">
+											<FlexBox direction="Row">
+												<items>
+													<Label text="{i18n>Filled}" class="UplFilledTetx"/>
+													<Text text="{oMaterial>ZzvenFilled}" class="UplFilledNumber"/>
+													<Text text="{oMaterial>ZzvenMeins}" class="UplFilledNumberMeins"/>
+												</items>
+											</FlexBox>
+											<FlexBox direction="Row" class="BotMargin1rem">
+												<Button icon="sap-icon://less" press="onLessItem" class="BtnUpl"></Button>
+												<Button icon="sap-icon://add" press="onAddItem" class="BtnUpl "></Button>
+											</FlexBox>
+										</FlexBox>
+									</FlexBox>
+								</FlexBox>
+							</f:GridListItem>
+						</f:GridList>
+						<Button text="{i18n>Save}" type="Emphasized" press="onConfirmSaveItems" class="sapUiMediumMarginTop sapUiTinyMarginBottom BtnUplSave"
+							width="100%"></Button>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

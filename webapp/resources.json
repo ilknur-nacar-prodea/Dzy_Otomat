@@ -1,0 +1,374 @@
+{
+    "resources": [
+        {
+            "name": "view/fragments/aracKabul/Messages.fragment.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "libs/quagga.js"
+        },
+        {
+            "name": "libs/qrcode.js"
+        },
+        {
+            "name": "libs/decoder.js"
+        },
+        {
+            "name": "libs/Zxing.min.js"
+        },
+        {
+            "name": "controller/UploadImage.controller.js"
+        },
+        {
+            "name": "controller/Trips.controller.js"
+        },
+        {
+            "name": "controller/TripResults.controller.js"
+        },
+        {
+            "name": "controller/StockReq.controller.js"
+        },
+        {
+            "name": "controller/SReportDamaged.controller.js"
+        },
+        {
+            "name": "controller/SReport.controller.js"
+        },
+        {
+            "name": "controller/ReturnStockAlt.controller.js"
+        },
+        {
+            "name": "controller/ReturnStock.controller.js"
+        },
+        {
+            "name": "controller/MachineUpload.controller.js"
+        },
+        {
+            "name": "controller/MachineSocket.controller.js"
+        },
+        {
+            "name": "controller/MachinePrediction.controller.js"
+        },
+        {
+            "name": "controller/MachineNote.controller.js"
+        },
+        {
+            "name": "controller/MachineInfo.controller.js"
+        },
+        {
+            "name": "controller/MachineHistory.controller.js"
+        },
+        {
+            "name": "controller/MachineDetail.controller.js"
+        },
+        {
+            "name": "controller/MachineControl.controller.js"
+        },
+        {
+            "name": "controller/ListSelector.js"
+        },
+        {
+            "name": "controller/Counting.controller.js"
+        },
+        {
+            "name": "controller/ConfirmStockReqDetail.controller.js"
+        },
+        {
+            "name": "controller/ConfirmStockReq.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "serviceBinding.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/quagga-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/qrcode-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/decoder-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/Zxing.min-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/UploadImage-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Trips-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/TripResults-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/StockReq-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SReportDamaged-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SReport-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ReturnStockAlt-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ReturnStock-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineUpload-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineSocket-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachinePrediction-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineNote-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineInfo-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineHistory-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MachineControl-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ListSelector-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Counting-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ConfirmStockReqDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ConfirmStockReq-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "serviceBinding-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/fragments/trips/Messages.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/UrunEkle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/UrunDuzenle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/SipBirimList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/SayimTuru.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/OtomatList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/MlzList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/Messages.fragment.xml"
+        },
+        {
+            "name": "view/fragments/sayim/AracPlakaList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoUrunTalep/UrunEkle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoUrunTalep/UrunDuzenle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoUrunTalep/SipBirimList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoUrunTalep/MlzList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoUrunTalep/Messages.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIadeBzk/UrunEkle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIadeBzk/UrunDuzenle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIadeBzk/MlzList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIadeBzk/Messages.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIade/UrunEkle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIade/UrunDuzenle.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIade/MlzList.fragment.xml"
+        },
+        {
+            "name": "view/fragments/depoIade/Messages.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "localService/ZDZY_OD_OTO_UYG_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/ZDZY_OD_ARAC_UYG_SRV/metadata.xml"
+        },
+        {
+            "name": "view/UploadImage.view.xml"
+        },
+        {
+            "name": "view/Trips.view.xml"
+        },
+        {
+            "name": "view/TripResults.view.xml"
+        },
+        {
+            "name": "view/StockReq.view.xml"
+        },
+        {
+            "name": "view/SReportDamaged.view.xml"
+        },
+        {
+            "name": "view/SReport.view.xml"
+        },
+        {
+            "name": "view/ReturnStockAlt.view.xml"
+        },
+        {
+            "name": "view/ReturnStock.view.xml"
+        },
+        {
+            "name": "view/MachineUpload.view.xml"
+        },
+        {
+            "name": "view/MachineSocket.view.xml"
+        },
+        {
+            "name": "view/MachinePrediction.view.xml"
+        },
+        {
+            "name": "view/MachineNote.view.xml"
+        },
+        {
+            "name": "view/MachineInfo.view.xml"
+        },
+        {
+            "name": "view/MachineHistory.view.xml"
+        },
+        {
+            "name": "view/MachineDetail.view.xml"
+        },
+        {
+            "name": "view/MachineControl.view.xml"
+        },
+        {
+            "name": "view/Counting.view.xml"
+        },
+        {
+            "name": "view/ConfirmStockReqDetail.view.xml"
+        },
+        {
+            "name": "view/ConfirmStockReq.view.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "images/map.png"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "index.html"
+        }
+    ]
+}

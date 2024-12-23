@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.DzyOtomat.controller.MachineHistory"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>History}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<Table items="{oHistory>/}" class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+						<headerToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<Title text="[{oHeader>/ZzvenScode}] {oHeader>/ZzvenSdesc}" level="H2"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="{i18n>TripTitle}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Date}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Responsible}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<ObjectIdentifier title="{oHistory>Zztrip}"/>
+									<Text text="{ path: 'oHistory>ZztripDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'} }"/>
+									<Text text="{oHistory>UserName}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,1 @@
+sap.ui.define(["app/DzyOtomat/test/unit/controller/Trips.controller"],function(){"use strict"});

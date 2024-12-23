@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.DzyOtomat.controller.MachineInfo"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>Info}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<List>
+						<items>
+							<ObjectListItem title="{i18n>InfoTitle1}">
+								<ObjectAttribute title="{oInfo>/ZztripLocation}" text="{oInfo>/ZzlocName}"/>
+								<ObjectAttribute title="{oInfo>/ZzvenScode}" text="{oInfo>/ZzvenSdesc}"/>
+								<ObjectAttribute text="{oInfo>/ZzvenTyped}"/>
+							</ObjectListItem>
+							<ObjectListItem title="{i18n>InfoTitle2}">
+								<ObjectAttribute text="{oInfo>/Address}"/>
+							</ObjectListItem>
+							<ObjectListItem title="{i18n>InfoTitle3}">
+								<ObjectAttribute text="�rnek 1"/>
+								<ObjectAttribute text="�rnek 2"/>
+							</ObjectListItem>
+						</items>
+					</List>
+					<Table items="{oNotes>/}" class="sapUiTinyMarginTop" noDataText="{i18n>NoDataText}" inset="true">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title text="{i18n>Notes}" level="H2"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns vAlign="Middle">
+							<Column >
+								<Text text="{i18n>NoteCode}"/>
+							</Column>
+							<Column >
+								<Text text="{i18n>NoteCodeText}"/>
+							</Column>
+							<Column >
+								<Text text="{i18n>Note}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="{oNotes>ZztripNoteCode}"/>
+									<ObjectIdentifier title="{oNotes>ZztripNoteCodeText}"/>
+									<TextArea value="{oNotes>ZztripNote}" rows="3" editable="false"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

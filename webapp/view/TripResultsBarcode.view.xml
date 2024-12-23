@@ -1,0 +1,49 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.DzyOtomat.controller.TripResultsBarcode"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>TripResultsBarcode}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<List id="idLocationList" items="{oLocations>/}" backgroundDesign="Transparent">
+						<items>
+							<CustomListItem>
+								<Panel expandable="true" expanded="false" expandAnimation="false" backgroundDesign="Solid">
+									<headerToolbar>
+										<OverflowToolbar height="9rem" active="true" press="onExpandLocation">
+											<FlexBox direction="Column">
+												<FlexBox direction="Column" class="sapUiTinyMarginBottom">
+													<Title text="{oLocations>ZzlocName}" level="H2" wrapping="true"/>
+													<Text text="{oLocations>ZztripLocation}" wrapping="true"/>
+													<Text text="{oLocations>Address}"/>
+												</FlexBox>
+												<FlexBox direction="Row">
+													<Button icon="sap-icon://functional-location" press="onNavToMaps" class="sapUiSmallMarginEnd BtnLocation" type="Emphasized"
+														tooltip="{i18n>GoToLocation}"></Button>
+													<Button icon="sap-icon://target-group" press="onNavToPrediction" class="sapUiSmallMarginEnd BtnLocation" type="Emphasized"
+														tooltip="{i18n>Prediction}"></Button>
+												</FlexBox>
+											</FlexBox>
+											<ToolbarSpacer/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<ScrollContainer horizontal="false" vertical="false">
+										<List items="{oLocations>machines}" backgroundDesign="Transparent">
+											<items>
+												<CustomListItem type="Active" press="onNavToMachine">
+													<VBox >
+														<Title text="{oLocations>ZzvenScode}" level="H2"/>
+														<Text text="{oLocations>ZzvenSdesc}" class="sapUiSmallMarginBottom"/>
+													</VBox>
+												</CustomListItem>
+											</items>
+										</List>
+									</ScrollContainer>
+								</Panel>
+							</CustomListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

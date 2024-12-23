@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<TableSelectDialog  noDataText="No Products Found" title="Malzeme Listesi" confirm="ConfirmMlzEkle"-->
+	<!--		cancel="CloseMlzList" items="{path: '/DUrnTlpMaterialListSet'}" search="searchMlz" id="MlzListTableId">-->
+	<!--		<columns >-->
+	<!--			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" width="2em">-->
+	<!--				<header>-->
+	<!--					<Text text="Malzeme No"/>-->
+	<!--				</header>-->
+	<!--			</Column>-->
+	<!--			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="3em">-->
+	<!--				<header>-->
+	<!--					<Text text="Malzeme A��klamas�"/>-->
+	<!--				</header>-->
+	<!--			</Column>-->
+	<!--			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">-->
+	<!--				<header>-->
+	<!--					<Text text="Ara� Stok"/>-->
+	<!--				</header>-->
+	<!--			</Column>-->
+	<!--			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">-->
+	<!--				<header>-->
+	<!--					<Text text="Depo Stok"/>-->
+	<!--				</header>-->
+	<!--			</Column>-->
+	<!--		</columns>-->
+	<!--		<ColumnListItem vAlign="Middle">-->
+	<!--			<cells>-->
+	<!--				<Text text="{Matnr}"/>-->
+	<!--				<Text text="{Maktx}"/>-->
+	<!--				<Text text="{ArcStkMktrBrm}"/>-->
+	<!--				<Text text="{DepoStkMktrBrm}"/>-->
+	<!--			</cells>-->
+	<!--		</ColumnListItem>-->
+	<!--	</TableSelectDialog>-->
+	<SelectDialog title="Malzeme Listesi" confirm="ConfirmMlzEkle" cancel="CloseMlzList" items="{path: 'ARAC>/DepoIadeMaterialListSet'}"
+		search="searchMlz" id="MlzListTableId2">
+		<!--<StandardListItem id="MlzListID" title="{MatnrMaktx}" description="{ArcStkMktrBrm}"  info="{ArcStkMktrBrm}" iconDensityAware="false" iconInset="false"-->
+		<!--	type="Active"/>-->
+		<StandardListItem id="MlzListID" title="{ARAC>Maktx}" info="{ARAC>ArcStkMktrBrm}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,49 @@
+<mvc:View controllerName="app.DzyOtomat.controller.ConfirmStockReqDetail" xmlns="sap.m" xmlns:semantic="sap.f.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:mvc="sap.ui.core.mvc">
+	<App>
+		<pages>
+			<Page title="{Detail>/TalepNo}" showNavButton="true" navButtonPress="onNavBack">
+				<Table id="lineItemsList" width="auto" items="{ARAC>/AracKabulTalepListDetailSet}" noDataText="{i18n>detailLineItemTableNoDataText}">
+					<columns>
+						<!--<Column>-->
+						<!--<Text text="Malzeme Kodu"/>-->
+						<!--</Column>-->
+						<Column width="40%">
+							<!--<Text text="Malzeme Tan�m�"/>-->
+						</Column>
+						<Column width="20%" >
+							<!--<Text text="Miktar"/>-->
+						</Column>
+						<Column width="10%">
+							<!--<Text text="Birim"/>-->
+						</Column>
+						<Column width="15%">
+							<!--<Text text="Birim"/>-->
+						</Column>
+						<Column width="15%" hAlign="End">
+							<!--<Text text="Birim"/>-->
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/sasdetailSet">
+							<cells>
+								<Text text="{ARAC>Maktx}"/>
+								<Text text="{path : 'ARAC>TeslimatMktr', type:'sap.ui.model.type.Float', formatter : '.formatter.currencyValue2'}"/>
+								<Text text="{ARAC>TeslimatBrm}"/>
+								<!--<Text text="{ARAC>Skt}"/>-->
+								<Text text="{ path:'ARAC>Skt',type: 'sap.ui.model.type.Date',formatOptions: {pattern: 'dd.MM.yyyy' }}"/>
+								<Text text="{ARAC>Charg}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<footer alignContent="Center" justifyContent="Center" alignItems="Center">
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button id="kaydetBtn" text="Kaydet" press="kaydetPress" type="Emphasized" width="25em" class="sapUiSmallMargin"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

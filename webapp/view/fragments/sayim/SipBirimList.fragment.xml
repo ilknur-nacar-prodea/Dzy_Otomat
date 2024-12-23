@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="SipBirimList4" title="Sipari� Birimleri" items="{path: 'ARAC>/DUrnTlpSipBrmListSet'}" search="searchSipBrm"
+		confirm="ConfirmSipBrmList" cancel="CloseSipBrmList">
+		<StandardListItem id="sipBrmListID4" title="{Msehi}" description="{Mseht}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

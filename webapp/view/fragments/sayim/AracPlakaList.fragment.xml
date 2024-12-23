@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<SelectDialog title="Ara� Listesi" confirm="ConfirmAracEkle" cancel="CloseAracList" items="{ARAC>/SayimAracListSet}"-->
+	<!--	search="searchMlz" id="MlzListTableId4">-->
+	<!--	<StandardListItem id="MlzListID4" title="{ARAC>Maktx}" info="{path : 'ARAC>DepoStkMktrBrm'}" iconDensityAware="false" iconInset="false"-->
+	<!--		type="Active"/>-->
+	<!--</SelectDialog>-->
+	<TableSelectDialog noDataText="No Products Found" title="{i18n>VehicleList}" confirm="onConfirmVehiclePlate" cancel="onCloseVehiclePlate"
+		items="{path: 'ARAC>/SayimAracListSet'}" search="onSearchVehiclePlate" id="VehiclePlateTableId4">
+		<columns >
+			<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" width="2em">
+				<header>
+					<Text text="{i18n>Plate}"/>
+				</header>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="3em">
+				<header>
+					<Text text="{i18n>Warehouse}"/>
+				</header>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">
+				<header>
+					<Text text="{i18n>WarehouseAddr}"/>
+				</header>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">
+				<header>
+					<Text text="{i18n>VehicleDesc}"/>
+				</header>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">
+				<header>
+					<Text text="{i18n>Mark}"/>
+				</header>
+			</Column>
+			<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Block" width="2em">
+				<header>
+					<Text text="{i18n>User}"/>
+				</header>
+			</Column>
+		</columns>
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<Text text="{ARAC>Zzvehicle}"/>
+				<Text text="{ARAC>ZzvehicleLgnum}"/>
+				<Text text="{ARAC>ZzvehicleLgpla}"/>
+				<Text text="{ARAC>ZzvehicleDesc}"/>
+				<Text text="{ARAC>ZzvehicleBrand}"/>
+				<Text text="{ARAC>ZzvehicleUname}"/>
+			</cells>
+		</ColumnListItem>
+	</TableSelectDialog>
+</core:FragmentDefinition>

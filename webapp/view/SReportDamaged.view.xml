@@ -1,0 +1,32 @@
+<mvc:View controllerName="app.DzyOtomat.controller.SReportDamaged" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>StockReportDamaged}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<HBox alignContent="Center" justifyContent="Center" width="auto" class="sapUiResponsiveMargin">
+						<VBox alignContent="Center" justifyContent="Center">
+							<Table id="MaterialTableRepD" inset="false" alternateRowColors="true" visible="true" class="sapUiResponsiveMargin" width="auto"
+								noDataText="{i18n>NoDataText}" updateFinished="onUpdateFinished" items="{ARAC>/StockRepDListSet}">
+								<columns>
+									<Column width="75%">
+										<!--<Text text="Malzeme A��klamas�" visible="true"/>-->
+									</Column>
+									<Column width="23%" hAlign="End">
+										<!--<Text text="SipMktr"/>-->
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<Label text="{ARAC>Maktx}" design="Bold"/>
+										<Label text="{ARAC>ArcStkMktrBrm}"/>
+										<!--<Text text="{path : 'ARAC>ArcStkMktrBrm', type:'sap.ui.model.type.Float',formatOptions: { maxFractionDigits: 3}}"/>-->
+									</ColumnListItem>
+								</items>
+							</Table>
+						</VBox>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

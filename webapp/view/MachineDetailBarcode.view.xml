@@ -1,0 +1,157 @@
+<mvc:View controllerName="app.DzyOtomat.controller.MachineDetailBarcode" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="{i18n>Machine}" showNavButton="true" navButtonPress="onConfirmNavBack">
+				<content>
+					<Panel id="panelForGridList" backgroundDesign="Transparent">
+						<VBox class="sapUiTinyMarginBeginEnd">
+							<ObjectAttribute text="{oMachine>/detail/ZzvenScode}, {oMachine>/detail/ZzvenSdesc}" class="sapUiTinyMarginTop sapUiTinyMarginBegin"/>
+							<ObjectAttribute text="{oMachine>/detail/ZzvenTelid}" class="sapUiTinyMarginTop sapUiTinyMarginBegin"/>
+						</VBox>
+					</Panel>
+					<List id="IdMachineActionList">
+						<!--<StandardListItem title="{i18n>Control}" type="Navigation" press="onNavToControl" class="linePadding"/>-->
+						<StandardListItem title="{i18n>Upload}" type="{= ${oMachine>/isControlled} === 'true' ? 'Navigation' : 'Inactive'}" press="onNavToUpload"
+							class="linePadding"/>
+						<StandardListItem title="{i18n>Info}" type="Navigation" press="onNavToInfo" class="linePadding"/>
+						<StandardListItem title="{i18n>Note}" type="{= ${oMachine>/isControlled} === 'true' ? 'Navigation' : 'Inactive'}" press="onNavToNote"
+							class="linePadding"/>
+						<StandardListItem title="{i18n>History}" type="Navigation" press="onNavToHistory" class="linePadding"/>
+						<StandardListItem title="{i18n>Prediction}" type="Navigation" press="onNavToPrediction" class="linePadding" visible="false"/>
+						<StandardListItem title="{i18n>UplImage}" type="{= ${oMachine>/isControlled} === 'true' ? 'Navigation' : 'Inactive'}"
+							press="onNavToUplPhoto" class="linePadding"/>
+						<StandardListItem title="{i18n>CheckOut}" type="{= ${oMachine>/isControlled} === 'true' ? 'Navigation' : 'Inactive'}"
+							press="onConfirmCheckOut" class="linePadding"/>
+					</List>
+					<VBox id="IdImgCont" visible="true"></VBox>
+					<!--<f:GridList id="grid1" class="sapUiTinyMarginTop">-->
+					<!--	<f:customLayout>-->
+					<!--		<grid:GridBoxLayout boxMinWidth="45%"/>-->
+					<!--	</f:customLayout>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToControl">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>Control}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://bar-code" class="iconsize2" color="#3399ff" tooltip="{i18n>Control}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToUpload">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>Upload}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://upload" class="iconsize2" color="#3399ff" tooltip="{i18n>Upload}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToInfo">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>Info}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://message-information" class="iconsize2" color="#3399ff" tooltip="{i18n>Info}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToNote">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>Note}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://notes" class="iconsize2" color="#3399ff" tooltip="{i18n>Note}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToHistory">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>History}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://history" class="iconsize2" color="#3399ff" tooltip="{i18n>History}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToPrediction">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>Prediction}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://product" class="iconsize2" color="#3399ff" tooltip="{i18n>Prediction}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToUplPhoto">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>UplPhoto}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://add-photo" class="iconsize2" color="#3399ff" tooltip="{i18n>UplPhoto}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--	<f:GridListItem class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" type="Active" press="onNavToCheckOut">-->
+					<!--		<VBox class="sapUiSmallMargin" height="150px">-->
+					<!--			<layoutData>-->
+					<!--				<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+					<!--			</layoutData>-->
+					<!--			<Title text="{i18n>CheckOut}" wrapping="true"/>-->
+					<!--			<VBox class="sapUiSmallMarginBeginEnd sapUiLargeMarginTopBottom">-->
+					<!--				<core:Icon src="sap-icon://log" class="iconsize2" color="#3399ff" tooltip="{i18n>CheckOut}">-->
+					<!--					<core:layoutData>-->
+					<!--						<FlexItemData growFactor="1"/>-->
+					<!--					</core:layoutData>-->
+					<!--				</core:Icon>-->
+					<!--			</VBox>-->
+					<!--		</VBox>-->
+					<!--	</f:GridListItem>-->
+					<!--</f:GridList>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,66 @@
+<mvc:View controllerName="app.DzyOtomat.controller.ReturnStock" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>ReturnStock}" showNavButton="true" navButtonPress="onNavBack">
+					<content>
+						<HBox alignContent="Center" justifyContent="Center">
+							<VBox alignContent="Center" justifyContent="Center">
+								<Button id="uruneklebtn" width="25em" type="Emphasized" text="{i18n>UrunEkle}" press="urunEklePress"></Button>
+							</VBox>
+						</HBox>
+						<HBox alignContent="Center" justifyContent="Center">
+							<VBox alignContent="Center" justifyContent="Center">
+								<Button id="tumuruneklebtn" width="25em" type="Emphasized" text="{i18n>TumUrunEkle}" press="tumurunEklePress"></Button>
+							</VBox>
+						</HBox>
+						<HBox alignContent="Center" justifyContent="Center">
+							<VBox alignContent="Center" justifyContent="Center">
+								<Button id="tumunuSil" width="25em" type="Reject" text="{i18n>TumUrunSil}" press="tumunuSilPress"></Button>
+							</VBox>
+						</HBox>
+						<HBox alignContent="Center" justifyContent="Center" width="auto" class="sapUiResponsiveMargin">
+							<VBox alignContent="Center" justifyContent="Center">
+								<Table id="MaterialTable2" inset="false" alternateRowColors="true" visible="true" class="sapUiResponsiveMargin" width="auto"
+									noDataText="{i18n>NoDataText}" updateFinished="onUpdateFinished" items="{iademalzemeListModel>/malzemeList}">
+									<columns>
+										<Column width="65%">
+											<!--<header>-->
+											<!--<Text text="Malzeme A��klamas�" visible="true"/>-->
+											<!--</header>-->
+										</Column>
+										<Column width="23%" hAlign="End"></Column>
+										<Column width="15%" visible="true"></Column>
+										<Column width="12%" hAlign="End"></Column>
+									</columns>
+									<items>
+										<ColumnListItem type="Active" press="onPressItem">
+											<Label text="{iademalzemeListModel>Maktx}" design="Bold"/>
+											<Text text="{path : 'iademalzemeListModel>IadeMktr',formatter : '.formatter.currencyValue3',formatOptions: { maxFractionDigits: 3}}"/>
+											<Text text="{iademalzemeListModel>IadeBrm}"/>
+											<Button press="removeFrmTable" icon="sap-icon://decline"/>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</HBox>
+						<!--<HBox alignContent="Center" justifyContent="Center">-->
+						<!--<FlexBox height="100px" alignItems="Start" justifyContent="End">-->
+						<!--	<Button id="kaydetBtn" text="Kaydet" press="kaydetPress" width="200px" class="sapUiSmallMargin"/>-->
+						<!--</FlexBox>-->
+						<!--<VBox alignContent="Center" justifyContent="Center">-->
+						<!--	<Button id="kaydetBtn" text="Kaydet" press="kaydetPress"></Button>-->
+						<!--</VBox>-->
+						<!--</HBox>-->
+					</content>
+					<footer alignContent="Center" justifyContent="Center" alignItems="Center">
+						<Toolbar>
+							<ToolbarSpacer/>	
+							<Button id="kaydetBtn" text="{i18n>SaveReturnStock}" press="kaydetPress" type="Emphasized" width="25em" class="sapUiSmallMargin"></Button>
+					</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,17 @@
+<core:View controllerName="app.DzyOtomat.controller.MachineControl" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ndc="sap.ndc"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:fiori="sap.ui.webc.fiori">
+	<App>
+		<pages>
+			<Page title="{i18n>Control}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<VBox class="sapUiLargeMarginBeginEnd sapUiSmallMarginTopBottom" alignItems="Center" alignContent="Center">
+						<Text text="{i18n>DoScan}" class="sapUiTinyMarginTopBottom"></Text>
+						<ndc:BarcodeScannerButton id="idScanner" scanSuccess="onScanSuccess" scanFail="onScanError" dialogTitle="{i18n>BarcodeScanner}"
+							preferFrontCamera="false" frameRate="30" zoom="1" class="sapUiLargeMarginBeginEnd sapUiLargeMarginTopBottom BtnBarcode" width="10rem"
+							blocked="{oControl>/blocked}" format="QR_CODE"/>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</core:View>

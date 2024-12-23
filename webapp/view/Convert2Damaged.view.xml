@@ -1,0 +1,72 @@
+<mvc:View controllerName="app.DzyOtomat.controller.Convert2Damaged" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>Convert2Damaged}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<HBox alignContent="Center" justifyContent="Center">
+						<VBox alignContent="Center" justifyContent="Center">
+							<Button id="uruneklebtn" width="25em" type="Emphasized" text="{i18n>UrunEkle}" press="urunEklePress"></Button>
+						</VBox>
+					</HBox>
+					<HBox alignContent="Center" justifyContent="Center">
+						<VBox alignContent="Center" justifyContent="Center">
+							<Button id="tumuruneklebtn" width="25em" type="Emphasized" text="{i18n>TumUrunEkle}" press="tumurunEklePress"></Button>
+						</VBox>
+					</HBox>
+					<HBox alignContent="Center" justifyContent="Center">
+						<VBox alignContent="Center" justifyContent="Center">
+							<Button id="tumunuSil" width="25em" type="Reject" text="{i18n>TumUrunSil}" press="tumunuSilPress"></Button>
+						</VBox>
+					</HBox>
+					<HBox alignContent="Center" justifyContent="Center" width="auto" class="sapUiResponsiveMargin">
+						<VBox alignContent="Center" justifyContent="Center">
+							<Table id="MaterialTable3" inset="false" alternateRowColors="true" visible="true" class="sapUiResponsiveMargin" width="auto"
+								noDataText="{i18n>NoDataText}" updateFinished="onUpdateFinished" items="{convert2DamMatListModel>/malzemeList}">
+								<columns>
+									<Column width="68%"></Column>
+									<Column width="18%"></Column>
+									<Column width="15%"></Column>
+									<Column width="12%" hAlign="End"></Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active" press="onPressItem">
+										<Label text="{convert2DamMatListModel>Maktx}" design="Bold"/>
+										<Text text="{path : 'convert2DamMatListModel>Mktr',formatter : '.formatter.currencyValue3',formatOptions: { maxFractionDigits: 3}}"/>
+										<Text text="{convert2DamMatListModel>Brm}" type="Unit"/>
+										<Button press="removeFrmTable" icon="sap-icon://decline"/>
+									</ColumnListItem>
+									<!--<ColumnListItem>-->
+									<!--<Text id="txtMlzNo"/>-->
+									<!--<Text id="txtMlzAck"/>-->
+									<!--<Text id="txtArcStk"/>-->
+									<!--<Text id="txtArcStkBrm"/>-->
+									<!--<Text id="txtIadeMik"/>-->
+									<!--<Text id="txtIadeBrm"/>-->
+									<!--<Button id="txtSil" press="onPressDelete" text= 'Sil' />-->
+									<!--</ColumnListItem>-->
+								</items>
+							</Table>
+							<!--<List id="MaterialTable" mode="Delete" delete="removeFrmTable" enableBusyIndicator="true" headerText="" growing="true">-->
+							<!--	<StandardListItem title="" description="" info=""/>-->
+							<!--</List>-->
+						</VBox>
+					</HBox>
+					<!--<HBox alignContent="Center" justifyContent="Center">-->
+					<!--<FlexBox height="100px" alignItems="Start" justifyContent="End">-->
+					<!--	<Button id="kaydetBtn" text="Kaydet" press="kaydetPress" width="200px" class="sapUiSmallMargin"/>-->
+					<!--</FlexBox>-->
+					<!--<VBox alignContent="Center" justifyContent="Center">-->
+					<!--	<Button id="kaydetBtn" text="Kaydet" press="kaydetPress"></Button>-->
+					<!--</VBox>-->
+					<!--</HBox>-->
+				</content>
+				<footer alignContent="Center" justifyContent="Center" alignItems="Center">
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button id="kaydetBtn" text="{i18n>SaveDamaged}" press="kaydetPress" type="Emphasized" width="25em" class="sapUiSmallMargin"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

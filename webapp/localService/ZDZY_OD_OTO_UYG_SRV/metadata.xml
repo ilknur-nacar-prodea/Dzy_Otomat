@@ -1,0 +1,154 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZDZY_OD_OTO_UYG_SRV" xml:lang="tr" sap:schema-version="1"><Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+			<EntityType Name="Trip" sap:content-version="1">
+				<Key><PropertyRef Name="ZzvehicleUname"/></Key><Property Name="Zzvehicle" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ara� Plaka"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="QntLocations" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Karakter alan� uzunlu�u 10"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleType" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Ara��n Tipi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="QntMachines" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Karakter alan� uzunlu�u 10"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleLgnum" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Depo numaras�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleLgpla" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Depo adresi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleDesc" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Ara� Tan�m�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleBrand" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Marka"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleUname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullan�c� ad�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvehicleRoot" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Rota" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Ad ve soyad"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Sefer Tarihi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVehicle" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ara� Plaka"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripRdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Sefer Ba�.Tarihi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripRname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Seferi Yaratan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripRtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Sefer Saati" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripEdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Sefer Biti� Tarihi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripEname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Seferi Kapatan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripEtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Sefer Kapan�� Zaman" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripStatu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Sefer Stat�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Location" sap:content-version="1">
+				<Key><PropertyRef Name="ZztripIno"/><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripLocation"/></Key><Property Name="Address" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="ADDRESS" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzlocLatitude" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="12" sap:unicode="false" sap:label="Enlem"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="ZzlocLongitude" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="12" sap:unicode="false" sap:label="Boylam"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ZzvenLgnum" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Depo numaras�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ZzvenLgpla" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Depo adresi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenTyped" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Otomat T�r� Tnm"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzlocName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Lokasyon Ad�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenScode" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Otomat K�sa Kod"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzlocPluscode" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Google Plus Code"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenTelid" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Telemetry ID"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenSdesc" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Otomat K�sa Tan�m"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Machine" Relationship="ZDZY_OD_OTO_UYG_SRV.LocationToMachine" FromRole="FromRole_LocationToMachine"
+					ToRole="ToRole_LocationToMachine"/></EntityType>
+			<EntityType Name="Machine" sap:content-version="1">
+				<Key><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripIno"/><PropertyRef Name="ZztripLocation"/><PropertyRef Name="ZztripVendmac"/></Key><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MatBarcode" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC kodu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VehcStock" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZvenReturn" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenLast" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ZzvenCurrent" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenMatnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tan�m" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenFilled" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ZvenBad" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenCap" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZvenSold" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenMeins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="�B" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="ZvenEmtyied" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="ZzvenMeins"
+					sap:label="Kapasite" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MachineInfo" sap:content-version="1">
+				<Key><PropertyRef Name="ZztripIno"/><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripLocation"/><PropertyRef Name="ZztripVendmac"/></Key><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzlocName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Lokasyon Ad�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Address" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Text (length 35)"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenScode" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Otomat K�sa Kod"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenSdesc" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Otomat K�sa Tan�m"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenLgnum" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Depo numaras�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenLgpla" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Depo adresi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenTyped" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Otomat T�r� Tnm"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MachineNote" sap:content-version="1">
+				<Key><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripIno"/><PropertyRef Name="ZztripLocation"/><PropertyRef Name="ZztripVendmac"/></Key><Property Name="ZztripNoteCodeText" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Not Kodu A��klamas�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripNoteCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Not Kodu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripNote" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Not" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MachineHistory" sap:content-version="1">
+				<Key><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripIno"/><PropertyRef Name="ZztripLocation"/><PropertyRef Name="ZztripVendmac"/></Key><Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Ad ve soyad"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Sefer Tarihi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVehicle" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ara� Plaka"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzlocName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Lokasyon Ad�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MachinePrediction" sap:content-version="1">
+				<Key><PropertyRef Name="Zztrip"/><PropertyRef Name="ZztripIno"/><PropertyRef Name="ZztripLocation"/><PropertyRef Name="ZztripVendmac"/></Key><Property Name="Zztrip" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sefer No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripIno" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenMatnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripLocation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Otomat Lokasyonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tan�m" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripVendmac" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Otomat DV"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenCurrent" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Kapasite"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZzvenNeeded" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Kapasite"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Return" sap:content-version="1">
+				<Key><PropertyRef Name="Type"/><PropertyRef Name="Id"/><PropertyRef Name="Number"/><PropertyRef Name="Message"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="�leti tipi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="�leti s�n�f�" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="�leti numaras�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="�leti metni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="G�nl�k no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="�leti numaras�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="�leti de�i�keni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="�leti de�i�keni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="�leti de�i�keni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="�leti de�i�keni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Parametre ad�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Row" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Parametre st." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Alan ad�" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Mant�ksal sistem"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="NoteCodes" sap:content-version="1">
+				<Key><PropertyRef Name="ZztripNoteCode"/></Key><Property Name="ZztripNoteCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Not Kodu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZztripNoteCodeText" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Not Kodu A��klamas�"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MaterialBarcode" sap:content-version="1">
+				<Key><PropertyRef Name="Ean11"/></Key><Property Name="Ean11" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC kodu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="LocationToMachine" sap:content-version="1"><End Type="ZDZY_OD_OTO_UYG_SRV.Location" Multiplicity="1" Role="FromRole_LocationToMachine"/><End Type="ZDZY_OD_OTO_UYG_SRV.Machine" Multiplicity="*" Role="ToRole_LocationToMachine"/></Association>
+			<EntityContainer Name="ZDZY_OD_OTO_UYG_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="TripSet" EntityType="ZDZY_OD_OTO_UYG_SRV.Trip" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="LocationSet" EntityType="ZDZY_OD_OTO_UYG_SRV.Location" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="MachineSet" EntityType="ZDZY_OD_OTO_UYG_SRV.Machine" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="MachineInfoSet" EntityType="ZDZY_OD_OTO_UYG_SRV.MachineInfo" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MachineNoteSet" EntityType="ZDZY_OD_OTO_UYG_SRV.MachineNote" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MachineHistorySet" EntityType="ZDZY_OD_OTO_UYG_SRV.MachineHistory" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MachinePredictionSet" EntityType="ZDZY_OD_OTO_UYG_SRV.MachinePrediction" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ReturnSet" EntityType="ZDZY_OD_OTO_UYG_SRV.Return" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="NoteCodesSet" EntityType="ZDZY_OD_OTO_UYG_SRV.NoteCodes" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="MaterialBarcodeSet" EntityType="ZDZY_OD_OTO_UYG_SRV.MaterialBarcode" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="LocationToMachineSet" Association="ZDZY_OD_OTO_UYG_SRV.LocationToMachine" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="LocationSet" Role="FromRole_LocationToMachine"/><End EntitySet="MachineSet" Role="ToRole_LocationToMachine"/></AssociationSet>
+				<FunctionImport Name="ValidateBarcode" ReturnType="Collection(ZDZY_OD_OTO_UYG_SRV.Return)" EntitySet="ReturnSet" m:HttpMethod="GET"><Parameter Name="barcode" Type="Edm.String" Mode="In" sap:label="Barcode"/><Parameter Name="trip" Type="Edm.String" Mode="In" sap:label="trip"/><Parameter Name="ino" Type="Edm.String" Mode="In" sap:label="ino"/><Parameter Name="location" Type="Edm.String" Mode="In" sap:label="location"/><Parameter Name="machine" Type="Edm.String" Mode="In" sap:label="machine"/></FunctionImport>
+				<FunctionImport Name="SaveImage" ReturnType="Collection(ZDZY_OD_OTO_UYG_SRV.Return)" EntitySet="ReturnSet" m:HttpMethod="GET"><Parameter Name="trip" Type="Edm.String" Mode="In" sap:label="trip"/><Parameter Name="ino" Type="Edm.String" Mode="In" sap:label="ino"/><Parameter Name="location" Type="Edm.String" Mode="In" sap:label="location"/><Parameter Name="machine" Type="Edm.String" Mode="In" sap:label="machine"/><Parameter Name="image" Type="Edm.String" Mode="In" sap:label="image"/><Parameter Name="extension" Type="Edm.String" Mode="In" sap:label="extension"/></FunctionImport>
+				<FunctionImport Name="SaveMachine" ReturnType="Collection(ZDZY_OD_OTO_UYG_SRV.Return)" EntitySet="ReturnSet" m:HttpMethod="GET"><Parameter Name="ino" Type="Edm.String" Mode="In" sap:label="ino"/><Parameter Name="location" Type="Edm.String" Mode="In" sap:label="location"/><Parameter Name="machine" Type="Edm.String" Mode="In" sap:label="machine"/><Parameter Name="trip" Type="Edm.String" Mode="In" sap:label="trip"/></FunctionImport>
+				<FunctionImport Name="CloseTrip" ReturnType="Collection(ZDZY_OD_OTO_UYG_SRV.Return)" EntitySet="ReturnSet" m:HttpMethod="GET"><Parameter Name="trip" Type="Edm.String" Mode="In" sap:label="trip"/></FunctionImport>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZDZY_OD_OTO_UYG_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZDZY_OD_OTO_UYG_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

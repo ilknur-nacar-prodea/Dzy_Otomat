@@ -1,0 +1,25 @@
+<mvc:View controllerName="app.DzyOtomat.controller.UploadImage" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:unified="sap.ui.unified"
+	xmlns:img="sap.suite.ui.commons.imageeditor" width="100%" height="100%">
+	<App>
+		<pages>
+			<Page title="{i18n>UplImage}" showNavButton="true" navButtonPress="onConfirmNavBack">
+				<Panel backgroundDesign="Solid" width="100%" class="sapUiMediumMarginTopBottom">
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<unified:FileUploader id="IdUploader" buttonText="{i18n>Upload}" buttonOnly="true" icon="sap-icon://upload" fileType="jpg,png,bmp"
+								change="onUploadChange" visible="false"/>
+							<Button text="{i18n>TakePicture}" icon="sap-icon://add-photo" press="onTakePicture"/>
+							<Button text="{i18n>Clear}" icon="sap-icon://delete" press="onClearContainer"/>
+						</Toolbar>
+					</headerToolbar>
+					<VBox alignContent="Center" alignItems="Center">
+						<img:ImageEditor id="image" loaded="onImageLoaded" class="sapUiMediumMarginTopBottom"/>
+						<Button type="Emphasized" text="{i18n>SaveImg}" press="onConfirmSaveImg" width="15rem" class="sapUiSmallMarginTop"/>
+					</VBox>
+				</Panel>
+				<VBox id="IdImgCont" visible="true"></VBox>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

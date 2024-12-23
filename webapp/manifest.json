@@ -1,0 +1,487 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "app.DzyOtomat",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0",
+            "toolsId": "2e3a113e-231e-4690-86f9-dd70a9da24d2"
+        },
+        "dataSources": {
+            "ZDZY_OD_OTO_UYG_SRV": {
+                "uri": "/sap/opu/odata/sap/ZDZY_OD_OTO_UYG_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZDZY_OD_OTO_UYG_SRV/metadata.xml"
+                }
+            },
+            "ZDZY_OD_ARAC_UYG_SRV": {
+                "uri": "/sap/opu/odata/sap/ZDZY_OD_ARAC_UYG_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZDZY_OD_ARAC_UYG_SRV/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "app.DzyOtomat.view.Trips",
+            "type": "XML",
+            "async": true,
+            "id": "Trips"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "app.DzyOtomat.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZDZY_OD_OTO_UYG_SRV",
+                "preload": true
+            },
+            "ARAC": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZDZY_OD_ARAC_UYG_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "libs/quagga.js"
+                },
+                {
+                    "uri": "libs/Zxing.min.js"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "app.DzyOtomat.view",
+                "controlAggregation": "pages",
+                "controlId": "App",
+                "clearControlAggregation": false,
+                "bypassed": {
+                    "target": []
+                }
+            },
+            "routes": [
+                {
+                    "name": "Trips",
+                    "pattern": "Trips",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Trips"
+                    ]
+                },
+                {
+                    "name": "TripResults",
+                    "pattern": "TripResults/{trip}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "TripResults"
+                    ]
+                },
+                {
+                    "name": "MachineDetail",
+                    "pattern": "MachineDetail/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineDetail"
+                    ]
+                },
+                {
+                    "name": "MachineControlBarcode",
+                    "pattern": "MachineControlBarcode/{trip}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineControlBarcode"
+                    ]
+                },
+                {
+                    "name": "MachineDetailBarcode",
+                    "pattern": "MachineDetailBarcode/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineDetailBarcode"
+                    ]
+                },
+                {
+                    "name": "MachineControl",
+                    "pattern": "MachineControl/{trip}/{ino}/{location}/{machine}/{control}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineControl"
+                    ]
+                },
+                {
+                    "name": "MachineUpload",
+                    "pattern": "MachineUpload/{trip}/{ino}/{location}/{machine}/{control}/{detail}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineUpload"
+                    ]
+                },
+                {
+                    "name": "MachineSocket",
+                    "pattern": "MachineSocket/{trip}/{ino}/{location}/{machine}/{control}/{detail}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineSocket"
+                    ]
+                },
+                {
+                    "name": "MachineInfo",
+                    "pattern": "MachineInfo/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineInfo"
+                    ]
+                },
+                {
+                    "name": "MachineNote",
+                    "pattern": "MachineNote/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineNote"
+                    ]
+                },
+                {
+                    "name": "MachineHistory",
+                    "pattern": "MachineHistory/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachineHistory"
+                    ]
+                },
+                {
+                    "name": "MachinePrediction",
+                    "pattern": "MachinePrediction/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MachinePrediction"
+                    ]
+                },
+                {
+                    "name": "StockReq",
+                    "pattern": "StockReq/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "StockReq"
+                    ]
+                },
+                {
+                    "name": "ConfirmStockReq",
+                    "pattern": "ConfirmStockReq/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "ConfirmStockReq"
+                    ]
+                },
+                {
+                    "name": "ConfirmStockReqDetail",
+                    "pattern": "ConfirmStockReqDetail/{trip}/{plate}/{req}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "ConfirmStockReqDetail"
+                    ]
+                },
+                {
+                    "name": "ReturnStock",
+                    "pattern": "ReturnStock/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "ReturnStock"
+                    ]
+                },
+                {
+                    "name": "ReturnStockAlt",
+                    "pattern": "ReturnStockAlt/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "ReturnStockAlt"
+                    ]
+                },
+                {
+                    "name": "Convert2Damaged",
+                    "pattern": "Convert2Damaged/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Convert2Damaged"
+                    ]
+                },
+                {
+                    "name": "StockReport",
+                    "pattern": "StockReport/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "StockReport"
+                    ]
+                },
+                {
+                    "name": "UploadImage",
+                    "pattern": "UploadUploadImageImage/{trip}/{ino}/{location}/{machine}/{control}/{simple}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "UploadImage"
+                    ]
+                },
+                {
+                    "name": "SReport",
+                    "pattern": "SReport/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "SReport"
+                    ]
+                },
+                {
+                    "name": "SReportDamaged",
+                    "pattern": "SReportDamaged/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "SReportDamaged"
+                    ]
+                },
+                {
+                    "name": "Counting",
+                    "pattern": "Counting/{trip}/{plate}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Counting"
+                    ]
+                },
+                {
+                    "name": "TripResultsBarcode",
+                    "pattern": "TripResultsBarcode/{trip}/{ino}/{location}/{machine}/{control}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "TripResultsBarcode"
+                    ]
+                }
+            ],
+            "targets": {
+                "Trips": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "Trips",
+                    "viewId": "TripsId"
+                },
+                "TripResults": {
+                    "viewType": "XML",
+                    "viewName": "TripResults",
+                    "viewId": "TripResultsId"
+                },
+                "MachineDetail": {
+                    "viewType": "XML",
+                    "viewName": "MachineDetail",
+                    "viewId": "MachineDetailId"
+                },
+                "MachineControl": {
+                    "viewType": "XML",
+                    "viewName": "MachineControl",
+                    "viewId": "MachineControlId"
+                },
+                "MachineUpload": {
+                    "viewType": "XML",
+                    "viewName": "MachineUpload",
+                    "viewId": "MachineUploadId"
+                },
+                "MachineSocket": {
+                    "viewType": "XML",
+                    "viewName": "MachineSocket",
+                    "viewId": "MachineSocketId"
+                },
+                "MachineInfo": {
+                    "viewType": "XML",
+                    "viewName": "MachineInfo",
+                    "viewId": "MachineInfoId"
+                },
+                "MachineNote": {
+                    "viewType": "XML",
+                    "viewName": "MachineNote",
+                    "viewId": "MachineNoteId"
+                },
+                "MachineHistory": {
+                    "viewType": "XML",
+                    "viewName": "MachineHistory",
+                    "viewId": "MachineHistoryId"
+                },
+                "MachinePrediction": {
+                    "viewType": "XML",
+                    "viewName": "MachinePrediction",
+                    "viewId": "MachinePredictionId"
+                },
+                "StockReq": {
+                    "viewType": "XML",
+                    "viewName": "StockReq",
+                    "viewId": "StockReqId"
+                },
+                "ConfirmStockReq": {
+                    "viewType": "XML",
+                    "viewName": "ConfirmStockReq",
+                    "viewId": "ConfirmStockReqId"
+                },
+                "ConfirmStockReqDetail": {
+                    "viewType": "XML",
+                    "viewName": "ConfirmStockReqDetail",
+                    "viewId": "ConfirmStockReqDetailId"
+                },
+                "ReturnStock": {
+                    "viewType": "XML",
+                    "viewName": "ReturnStock",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ReturnStockId"
+                },
+                "ReturnStockAlt": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "ReturnStockAlt",
+                    "viewId": "ReturnStockAltId"
+                },
+                "UploadImage": {
+                    "viewType": "XML",
+                    "viewName": "UploadImage",
+                    "viewId": "UploadImageId"
+                },
+                "StockReport": {
+                    "viewType": "XML",
+                    "viewName": "StockReport",
+                    "viewId": "StockReportId"
+                },
+                "SReport": {
+                    "viewType": "XML",
+                    "viewName": "SReport",
+                    "viewId": "SReportId"
+                },
+                "SReportDamaged": {
+                    "viewType": "XML",
+                    "viewName": "SReportDamaged",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "SReportDamagedId"
+                },
+                "Counting": {
+                    "viewType": "XML",
+                    "viewName": "Counting",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewLevel": null,
+                    "viewId": "CountingId"
+                },
+                "TripResultsBarcode": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "TripResultsBarcode",
+                    "viewId": "TripResultsBarcodeId"
+                },
+                "MachineControlBarcode": {
+                    "viewType": "XML",
+                    "viewName": "MachineControlBarcode",
+                    "viewId": "MachineControlBarcodeId"
+                },
+                "MachineDetailBarcode": {
+                    "viewType": "XML",
+                    "viewName": "MachineDetailBarcode",
+                    "viewId": "MachineDetailBarcodeId"
+                },
+                "Convert2Damaged": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "Convert2Damaged",
+                    "viewId": "Convert2DamagedId"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zduzey_fio_oto",
+        "_version": "1.1.0"
+    }
+}

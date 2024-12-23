@@ -1,0 +1,23 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.DzyOtomat.controller.MachineNote"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wb="sap.ui.webc.main">
+	<App>
+		<pages>
+			<Page title="{i18n>Note}" showNavButton="true" navButtonPress="onConfirmNavBack">
+				<Panel backgroundDesign="Solid" width="100%" class="sapUiMediumMarginTopBottom">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="[{oHeader>/ZzvenScode}] {oHeader>/ZzvenSdesc}"/>
+						</Toolbar>
+					</headerToolbar>
+					<VBox alignContent="Center" alignItems="Center">
+						<ComboBox id="IdCboxCode" showSecondaryValues="true" items="{oCodes>/}" required="true" width="20rem" change="onChangeCode">
+							<core:ListItem key="{oCodes>ZztripNoteCode}" text="{oCodes>ZztripNoteCodeText}" additionalText="{oCodes>ZztripNoteCode}"/>
+						</ComboBox>
+						<TextArea id="IdInpNote" width="20rem" rows="3" class="sapUiTinyMarginTop"></TextArea>
+						<Button text="{i18n>SaveNote}" width="20rem" type="Emphasized" press="onConfirmSaveNote" class="sapUiTinyMarginTop"></Button>
+					</VBox>
+				</Panel>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

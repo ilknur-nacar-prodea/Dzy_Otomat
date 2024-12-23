@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog title="{i18n>UrunEkle}" resizable="true" draggable="true">
+		<VBox class="sapUiSmallMargin">
+			<f:Form id="urunEkleFrgDzn5" editable="true" ariaLabelledBy="Title5">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+						emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer ariaLabelledBy="Title5">
+						<f:formElements>
+							<f:FormElement label="{i18n>MalzemeNo}">
+								<f:fields>
+									<Label text="" id="UEkleMlzNoDzn5" class="lblCenter"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement>
+								<f:fields>
+									<Label text="" id="UEkleMlzAckDzn5" design="Bold" class="lblCenter"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>ConvertMiktar}">
+								<f:fields>
+									<Input value="{path:'',type:'sap.ui.model.type.Float'}" id="UEkleMikDzn5" editable="true" required="true"/>
+									<Label text="" id="UEkleBrmDzn5" width="3em" class="lblCenter"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+		<beginButton>
+			<Button text="Kaydet" press="onKaydetUrunDzn" type="Accept"/>
+		</beginButton>
+		<endButton>
+			<Button text="Kapat" press="onKapatUrunDzn" type="Reject"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

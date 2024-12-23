@@ -1,0 +1,1 @@
+sap.ui.define(["app/DzyOtomat/controller/Trips.controller"],function(t){"use strict";QUnit.module("Trips Controller");QUnit.test("I should test the Trips controller",function(o){var n=new t;n.onInit();o.ok(n)})});

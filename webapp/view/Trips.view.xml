@@ -1,0 +1,79 @@
+<mvc:View controllerName="app.DzyOtomat.controller.Trips" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:ndc="sap.ndc.BarcodeScanner" height="100%" width="100%" displayBlock="true" xmlns:control="sap.ui.core.Control">
+	<App id="App">
+		<pages>
+			<Page title="{i18n>MainPage}">
+				<Panel id="panelForGridList" backgroundDesign="Transparent">
+					<FlexBox direction="Row" width="100%">
+						<FlexBox direction="Column" justifyContent="Start" width="100%">
+							<ObjectAttribute id="idTripNo" title="{i18n>TripTitle}"
+								text="{= ${oTripDetail>/Zztrip} === 'X' ? ${i18n>CreateNew} : ${oTripDetail>/Zztrip} }" class="sapUiTinyMarginBottom"/>
+							<ObjectAttribute title="{i18n>Vehicle}" text="{oTripDetail>/Zzvehicle}" class="sapUiTinyMarginBottom"/>
+							<ObjectAttribute title="{i18n>Locations}" text="{oTripDetail>/QntLocations}" class="sapUiTinyMarginBottom"/>
+							<ObjectAttribute title="{i18n>Machines}" text="{oTripDetail>/QntMachines}" class="sapUiTinyMarginBottom"/>
+						</FlexBox>
+						<FlexBox direction="Column" justifyContent="End" alignContent="End" alignItems="End" width="100%" fitContainer="true">
+							<Title text="{ path: 'oTripDetail>/ZztripRdate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd-MM-yyyy'} }"/>
+							<Title text="{oTripDetail>/UserName}"/>
+							<ObjectStatus text="{ path: 'oTripDetail>/ZztripStatu', formatter: '.formatter.getStatuText'}"
+								state="{ path: 'oTripDetail>/ZztripStatu', formatter: '.formatter.getStatuState' }"/>
+						</FlexBox>
+					</FlexBox>
+				</Panel>
+				<Panel id="VehicleActionList" expandable="true" expanded="false" expandAnimation="true" backgroundDesign="Solid"
+					headerText="{i18n>VehicleActionList}">
+					<List>
+						<StandardListItem title="{i18n>ReqStock}" type="Navigation" press="onNavToStockRequest" class="linePadding"/>
+						<StandardListItem title="{i18n>UploadVehicle}" type="Navigation" press="onNavToUploadVehicle" class="linePadding"/>
+						<StandardListItem title="{i18n>ReturnStock}" type="Navigation" press="onNavToReturnStock" class="linePadding"/>
+						<StandardListItem title="{i18n>ReturnStockAlt}" type="Navigation" press="onNavToReturnStockAlt" class="linePadding"/>
+						<StandardListItem title="{i18n>Convert2Damaged}" type="Navigation" press="onNavToConvert2Damaged" class="linePadding"/>
+					</List>
+				</Panel>
+				<Panel id="TripActionList" expandable="true" expanded="false" expandAnimation="true" backgroundDesign="Solid"
+					headerText="{i18n>TripActionList}">
+					<List>
+						<StandardListItem title="{i18n>CreateTrip}" type="{= ${oTripDetail>/Zztrip} === 'X' ? 'Navigation' : 'Inactive'}"
+							press="onConfirmCreateTtip" class="linePadding"/>
+						<StandardListItem title=" {i18n>OptimizeRoute}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}"
+							press="onOptimizeRoute" class="linePadding"/>
+						<StandardListItem title="{i18n>TripResults}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}"
+							press="onNavToTripResults" class="linePadding"/>
+						<StandardListItem title="{i18n>TripResultsBarcode}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}"
+							press="onNavToTripResultsBarcode" class="linePadding"/>	
+						<StandardListItem title="{i18n>CloseTrip}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}" press="onConfirmCloseTrip"
+							class="linePadding"/>
+					</List>
+				</Panel>
+				<Panel id="CountingActionList" expandable="true" expanded="false" expandAnimation="true" backgroundDesign="Solid"
+					headerText="{i18n>CountingActionList}">
+					<List>
+						<StandardListItem title="{i18n>CreateCounting}" type="Navigation" press="onNavToCreateCounting" class="linePadding"/>
+					</List>
+				</Panel>
+				<Panel id="ReportList" expandable="true" expanded="false" expandAnimation="true" backgroundDesign="Solid" headerText="{i18n>ReportList}">
+					<List>
+						<StandardListItem title="{i18n>StockReport}" type="Navigation" press="onNavToStockReport" class="linePadding"/>
+						<StandardListItem title="{i18n>StockReportDamaged}" type="Navigation" press="onNavToStockReportDamaged" class="linePadding"/>
+					</List>
+				</Panel>
+				<!--<List>-->
+				<!--	<StandardListItem title="{i18n>CreateTrip}" type="{= ${oTripDetail>/Zztrip} === 'X' ? 'Navigation' : 'Inactive'}"-->
+				<!--		press="onConfirmCreateTtip" class="linePadding"/>-->
+				<!--	<StandardListItem title=" {i18n>OptimizeRoute}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}"-->
+				<!--		press="onOptimizeRoute" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>ReqStock}" type="Navigation" press="onNavToStockRequest" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>UploadVehicle}" type="Navigation" press="onNavToUploadVehicle" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>TripResults}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}"-->
+				<!--		press="onNavToTripResults" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>ReturnStock}" type="Navigation" press="onNavToReturnStock" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>ReturnStockAlt}" type="Navigation" press="onNavToReturnStockAlt" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>StockReport}" type="Navigation" press="onNavToStockReport" class="linePadding"/>-->
+				<!--	<StandardListItem title="{i18n>CloseTrip}" type="{= ${oTripDetail>/Zztrip} !== 'X' ? 'Navigation' : 'Inactive'}" press="onConfirmCloseTrip"-->
+				<!--		class="linePadding"/>-->
+				<!--</List>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

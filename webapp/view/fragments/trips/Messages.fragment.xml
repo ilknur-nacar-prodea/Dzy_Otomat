@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:cm="sap.ui.commons" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog title="{i18n>Messages}" class=" sapUiNoContentPadding sapUiSizeCompact" verticalScrolling="true" type="Standard">
+		<content>
+			<List items="{oMsgModel>/}">
+				<CustomListItem class="sapUiTinyMargin" type="Inactive">
+					<HBox alignItems="Start" justifyContent="Start">
+						<Button icon="{path:'oMsgModel>MessageType',formatter:'.formatter.getIcon'}"
+							type="{path:'oMsgModel>MessageType',formatter:'.formatter.getType'}"/>
+						<Text text="{oMsgModel>Message}" class="sapUiTinyMargin"/>
+					</HBox>
+				</CustomListItem>
+			</List>
+		</content>
+		<endButton>
+			<Button text="{i18n>Close}" press="onMessageClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

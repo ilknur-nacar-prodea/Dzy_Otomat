@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.DzyOtomat.controller.MachinePrediction"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>Prediction}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<Table items="{oPrediction>/}" class="sapUiTinyMarginTop sapUiTinyMarginBegin">
+						<headerToolbar>
+							<OverflowToolbar height="3rem">
+								<VBox class="sapUiTinyMarginTopBottom">
+									<HBox>
+										<Title text="{oHeader>/ZzlocName}" level="H2"/>
+										<Text text="{oHeader>/ZztripLocation}" class="sapUiTinyMarginBegin"/>
+									</HBox>
+									<Text text="{oHeader>/Address}"/>
+								</VBox>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="{i18n>Material}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Current}"/>
+							</Column>
+							<Column >
+								<Text text="{i18n>Needed}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<ObjectIdentifier title="{oPrediction>Maktx}"/>
+									<Text text="{oPrediction>ZzvenCurrent}"/>
+									<Text text="{oPrediction>ZzvenNeeded}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

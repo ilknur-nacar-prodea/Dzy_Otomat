@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Otomat Listesi" confirm="onConfirmAutomatList" cancel="onCloseAutomatList" items="{ARAC>/SayimOtomatListSet}"
+		search="onSearchAutomatList" id="AutomatListTableId4">
+		<StandardListItem id="AutomatListID4" title="{ARAC>Zzlocation}" description="{path : 'ARAC>ZztripVendmac'}" info="{path : 'ARAC>ZzlocName'}" iconDensityAware="false" iconInset="false"
+			type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

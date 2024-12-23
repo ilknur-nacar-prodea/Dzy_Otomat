@@ -1,0 +1,92 @@
+<mvc:View controllerName="app.DzyOtomat.controller.MachineSocket" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>MachineSocket}" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<Panel id="panelForGridList" backgroundDesign="Solid" width="100%" class="sapUiMediumMarginTopBottom sapUiTinyMarginBeginEnd">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{oMaterial>/Maktx}"/>
+								<ToolbarSpacer/>
+							</Toolbar>
+						</headerToolbar>
+						<FlexBox direction="Column">
+							<Label text="{i18n>Capacity}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpCapacity" design="Bold"></Label>
+							<FlexBox direction="Row">
+								<FlexBox direction="Column">
+									<Input id="IdInpCapacity" value="{oMaterial>/Cap}" class="sapUiTinyMarginBegin" type="Number" enabled="false" width="5rem"></Input>
+								</FlexBox>
+								<FlexBox direction="Column" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+									<Text text=" {oMaterial>/Meins}"></Text>
+								</FlexBox>
+							</FlexBox>
+							<Label text="{i18n>Filled}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpFilled" design="Bold"></Label>
+							<FlexBox direction="Row">
+								<FlexBox direction="Column">
+									<Input id="IdInpFilled" value="{path: 'oMaterial>/Filled', formatter: '.formatter.formatQuanNoZero'}" class="sapUiTinyMarginBegin"
+										type="Number" liveChange="onChangeAmount" width="5rem"></Input>
+								</FlexBox>
+								<FlexBox direction="Column" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+									<Text text=" {oMaterial>/Meins}"></Text>
+								</FlexBox>
+							</FlexBox>
+							<Label text="{i18n>Return}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpReturn" design="Bold"></Label>
+							<FlexBox direction="Row">
+								<FlexBox direction="Column">
+									<Input id="IdInpReturn" value="{path: 'oMaterial>/Return', formatter: '.formatter.formatQuanNoZero'}" class="sapUiTinyMarginBegin"
+										type="Number" liveChange="onChangeAmount" width="5rem"></Input>
+								</FlexBox>
+								<FlexBox direction="Column" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+									<Text text=" {oMaterial>/Meins}"></Text>
+								</FlexBox>
+							</FlexBox>
+							<Label text="{i18n>Bad}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpBad" design="Bold"></Label>
+							<FlexBox direction="Row">
+								<FlexBox direction="Column">
+									<Input id="IdInpBad" value="{path: 'oMaterial>/Bad', formatter: '.formatter.formatQuanNoZero'}" class="sapUiTinyMarginBegin" type="Number"
+										liveChange="onChangeAmount" width="5rem"></Input>
+								</FlexBox>
+								<FlexBox direction="Column" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+									<Text text=" {oMaterial>/Meins}"></Text>
+								</FlexBox>
+							</FlexBox>
+						</FlexBox>
+						<!--<HBox>-->
+						<!--	<VBox class="sapUiSmallMarginBegin">-->
+						<!--		<Label text="{i18n>Current}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpCurrent" design="Bold"></Label>-->
+						<!--		<Input id="IdInpCurrent" value="{oMaterial>/Current}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount" width="50%"-->
+						<!--			enabled="false"></Input>-->
+						<!--		<Label text="{i18n>Filled}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpFilled" design="Bold"></Label>-->
+						<!--		<Input id="IdInpFilled" value="{oMaterial>/Filled}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount" width="50%"></Input>-->
+						<!--		<Label text="{i18n>Emptied}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpEmptied" design="Bold"></Label>-->
+						<!--		<Input id="IdInpEmptied" value="{oMaterial>/Emptied}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount" width="50%"></Input>-->
+						<!--		<Label text="{i18n>Bad}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpBad" design="Bold"></Label>-->
+						<!--		<Input id="IdInpBad" value="{oMaterial>/Bad}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount" width="50%"></Input>-->
+						<!--<Label text="{i18n>BadRetrun}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpBadRetrun" design="Bold"></Label>-->
+						<!--<Input id="IdInpBadRetrun" value="{oMaterial>/BadRetrun}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount" width="50%"></Input>-->
+						<!--<Label text="{i18n>GoodRetrun}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" labelFor="IdInpGoodRetrun" design="Bold"></Label>-->
+						<!--<Input id="IdInpGoodRetrun" value="{oMaterial>/GoodRetrun}" class="sapUiTinyMarginBegin" type="Number" liveChange="onChangeAmount"-->
+						<!--	width="50%"></Input>-->
+						<!--	</VBox>-->
+						<!--	<VBox class="sapUiTinyMarginBeginEnd sapUiSmallMarginTop">-->
+						<!--<HBox>-->
+						<!--	<Label text="{i18n>Last}:" class="sapUiSmallMarginTop" design="Bold" visible="false"></Label>-->
+						<!--	<Text text="{oMaterial>/Last}" class="sapUiTinyMarginBegin sapUiSmallMarginTop" visible="false"></Text>-->
+						<!--</HBox>-->
+						<!--<HBox>-->
+						<!--	<Label text="{i18n>Sold}:" class="sapUiSmallMarginTop" design="Bold" visible="false"></Label>-->
+						<!--	<Text text="{oMaterial>/Sold}" class="sapUiTinyMarginBegin sapUiSmallMarginTop" visible="false"></Text>-->
+						<!--</HBox>-->
+						<!--		<HBox>-->
+						<!--			<Label text="{i18n>Capacity}:" class="sapUiSmallMarginTop" design="Bold"></Label>-->
+						<!--			<Text text="{oMaterial>/Cap}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"></Text>-->
+						<!--		</HBox>-->
+						<!--	</VBox>-->
+						<!--</HBox>-->
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

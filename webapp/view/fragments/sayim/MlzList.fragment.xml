@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Malzeme Listesi" confirm="ConfirmMlzEkle" cancel="CloseMlzList" items="{ARAC>/DUrnTlpMaterialListSet}"
+		search="searchMlz" id="MlzListTableId4">
+		<StandardListItem id="MlzListID4" title="{ARAC>Maktx}" info="{path : 'ARAC>DepoStkMktrBrm'}" iconDensityAware="false" iconInset="false"
+			type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,27 @@
+<mvc:View controllerName="app.DzyOtomat.controller.ConfirmStockReq" xmlns="sap.m" xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+	<App>
+		<pages>
+			<Page title="{i18n>AracKabul}" showNavButton="true" navButtonPress="onNavBack">
+				<List id="list" width="auto" class="sapFDynamicPageAlignContent"
+					items="{ path: 'ARAC>/AracKabulTalepListSet', sorter: { path: 'ARAC>TalepNo', descending: false }}" noDataText="{i18n>noDataText}"
+					growing="true" growingScrollToLoad="true">
+					<headerToolbar>
+						<OverflowToolbar>
+							<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search=".onSearch" width="auto">
+								<layoutData>
+									<OverflowToolbarLayoutData minWidth="150px" maxWidth="240px" shrinkable="true" priority="NeverOverflow"/>
+								</layoutData>
+							</SearchField>
+							<ToolbarSpacer/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<items>
+						<ObjectListItem type="Navigation" press="onSelectionChange" title="{ARAC>TalepNo}"
+							number="{ path:'ARAC>TalepTarihi',type: 'sap.ui.model.type.Date',formatOptions: {pattern: 'dd.MM.yyyy' }}"></ObjectListItem>
+					</items>
+				</List>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

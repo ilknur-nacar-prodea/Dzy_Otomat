@@ -1,0 +1,168 @@
+.iconsize2 {
+    font-size: 2.5rem;
+}
+
+.linePadding {
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+}
+
+.sapMPanelBGTransparent {
+    background-color: #e6f3ff;
+}
+
+/* Trip Results Page*/
+.BtnLocation .sapMBtnIcon {
+    line-height: 2rem;
+    width: 1rem;
+    font-size: 1.400rem;
+    max-height: 1.5rem;
+}
+
+.BtnLocation .sapMBtnInner {
+    min-width: 3rem;
+    height: 2.2rem;
+    border-radius: 0.4rem;
+}
+
+/* Upload Page*/
+.BtnUpl .sapMBtnIcon {
+    line-height: 1.75rem;
+    width: 1rem;
+    font-size: 1rem;
+    max-height: 1.5rem;
+    margin-left: 0.4375rem;
+    margin-right: 0.4375rem;
+}
+
+.BtnUplEdit .sapMBtnIcon {
+    line-height: 1.75rem;
+    width: 1rem;
+    font-size: 1rem;
+    max-height: 1.5rem;
+    margin-left: 0.4375rem;
+    margin-right: 0.4375rem;
+}
+
+.BtnUpl .sapMBtnInner {
+    min-width: 2.5rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.BtnUplEdit .sapMBtnInner {
+    min-width: 2.5rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+}
+
+.BtnUplSave .sapMBtnInner {
+    min-width: 2rem;
+    height: 2.7rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+}
+
+.BtnUplSave .sapMBtnContent {
+    line-height: 2.5rem;
+}
+
+.BotMargin1rem {
+    margin-bottom: 1rem !important;
+}
+
+.TopMargin02rem {
+    margin-top: 0.2rem;
+}
+
+.UplFirstTitle {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.UplMaterialTitle {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.UplFilledTetx {
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.UplFilledNumber {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.UplFilledNumberMeins {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    margin-left: 0.2rem;
+}
+
+
+.UplGridList {
+    padding-left: 0rem;
+    margin-left: 0rem;
+    margin-top: 1rem;
+}
+
+.UplMatnrText {
+    margin-left: 1.6rem !important;
+}
+
+/*Control Page*/
+.BtnBarcode .sapMBtnInner {
+    min-width: 3.5rem;
+    height: 2.7rem;
+    border-radius: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+/*Di�er*/
+.boldFont {
+    font-weight: bold;
+}
+
+.center {
+    text-alignment: center;
+    alignItems: "Center";
+    justifyContent: "Center";
+    text-align: center;
+}
+
+.buttonColor {
+    background-color: red;
+    background-image: none;
+    text-shadow: none;
+    color: #fff;
+    border-radius: 30%;
+    outline: medium none !important;
+}
+
+.inputNoBorder .sapMInputBaseInner {
+    border: none;
+    outline: none;
+}
+
+.lblCenter {
+    justify-content: center !important;
+    margin-top: 0.5em !important;
+}
+
+.inStockColor {
+	background-color: #C5E7A5 ;
+    color: #C5E7A5 ;
+    /*font-size: 1rem;*/
+    /*font-weight: bold;*/
+}
+
+.outOfStockColor {
+	background-color: #FBBBAD;
+    color: #FBBBAD;
+    /*font-size: 1rem;*/
+    /*font-weight: bold;*/
+}

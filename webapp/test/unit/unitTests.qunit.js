@@ -1,0 +1,1 @@
+QUnit.config.autostart=false;sap.ui.getCore().attachInit(function(){"use strict";sap.ui.require(["app/DzyOtomat/test/unit/AllTests"],function(){QUnit.start()})});
